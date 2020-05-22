@@ -6,6 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -14,13 +16,13 @@ import java.awt.*;
 public class RegisterApplication extends MyApplication {
 
     @FXML
-    private TextField name;
+    private TextField nameTextField;
     @FXML
-    private PasswordField password;
+    private PasswordField passwordField;
     @FXML
-    private PasswordField confirmPassword;
+    private PasswordField confirmPasswordField;
     @FXML
-    private Button submit;
+    private Button submitButton;
 
     @Override
     public void start(Stage primaryStage) throws Exception {

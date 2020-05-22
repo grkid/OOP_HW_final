@@ -10,7 +10,7 @@
       <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
             <Label text="名称：" />
-            <TextField fx:id="name" />
+            <TextField fx:id="nameTextField" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
@@ -26,18 +26,18 @@
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
             <Label text="密码：" />
-            <PasswordField fx:id="password" />
+            <PasswordField fx:id="passwordField" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
             <Label text="确认密码：" />
-            <PasswordField fx:id="confirmPassword" prefHeight="30.0" prefWidth="172.0" />
+            <PasswordField fx:id="confirmPasswordField" prefHeight="30.0" prefWidth="172.0" />
          </children>
       </HBox>
       <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button fx:id="submit" mnemonicParsing="false" prefHeight="43.0" prefWidth="77.0" text="提交" />
+            <Button fx:id="submitButton" mnemonicParsing="false" prefHeight="43.0" prefWidth="77.0" text="提交" />
          </children>
       </HBox>
    </children>
