@@ -27,7 +27,7 @@ public class Seller extends People implements RequestSeller {
                 +" "+price
                 +" "+Base64handler.StringToBase64(description)
                 +" "+Base64handler.imageToBase64(picDir);
-        return WebConnector.post(fake_sql); ·
+        return WebConnector.post(fake_sql);
     }
 
 //    @Override

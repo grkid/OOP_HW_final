@@ -6,24 +6,24 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginInterface">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginApplication">
    <children>
       <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
             <Label text="账号：" />
-            <TextField id="userIDTextField" />
+            <TextField fx:id="userIDTextField" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
             <Label text="密码：" />
-            <PasswordField id="userPasswordTextField" />
+            <PasswordField fx:id="userPasswordTextField" />
          </children>
       </HBox>
       <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
          <children>
-            <Button id="loginButton" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" text="登录" onAction="#onClickLoginButton" />
-            <Button id="registerButton" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" text="注册" onAction="#onClickRegisterButton" />
+            <Button fx:id="loginButton" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" text="登录" onAction="#onLoginButtonClick"/>
+            <Button fx:id="registerButton" mnemonicParsing="false" prefHeight="45.0" prefWidth="80.0" text="注册" onAction="#onRegisterButtonClick"/>
          </children>
          <VBox.margin>
             <Insets />
