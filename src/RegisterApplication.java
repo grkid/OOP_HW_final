@@ -1,20 +1,19 @@
-import javafx.application.Application;
-import javafx.application.Platform;
-import javafx.event.EventHandler;
+import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
-import java.awt.*;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class RegisterApplication extends MyApplication {
 
+    @FXML
+    private ChoiceBox<String> type;
     @FXML
     private TextField nameTextField;
     @FXML
@@ -31,9 +30,39 @@ public class RegisterApplication extends MyApplication {
         super.start(primaryStage);
     }
 
-    @Override
-    protected void WindowInit() {
+    public void onSubmitButtonClick(ActionEvent event) throws Exception
+    {
+        String t=type.getValue();
+        if(t.equals("用户"))
+            t=Str.customer;
+        else
+            t=Str.seller;
 
-        super.WindowInit();
+        String name=nameTextField.getText();
+        String password1=passwordField.getText();
+        String password2=confirmPasswordField.getText();
+
+        if(!password1.equals(password2)) {
+            InfoApplication.showMessage("两次输入的密码不一致，请重新输入密码。");
+            passwordField.clear();
+            confirmPasswordField.clear();
+            return;
+        }
+
+        String result=People.RequestRegister(t,password1,name);
+        String[] results=result.split(" ");
+        if(results.length==3 && results[1].equals(Str.success.strip()))
+        {
+            InfoApplication.showMessage("注册成功，您的ID为："+results[2]+"。请牢记。");
+        }
+        else
+        {
+            InfoApplication.showMessage("注册失败，请检查是否正确连接到服务器。");
+        }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        type.setItems(FXCollections.observableArrayList("用户","商家"));
     }
 }

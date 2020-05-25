@@ -8,7 +8,7 @@ public class People implements RequestPeople {
     protected String password;
     protected double money;
 
-    private People(){};
+    protected People(){};
 
     private static People instance=null;
 
@@ -56,17 +56,15 @@ public class People implements RequestPeople {
         return WebConnector.post(fake_sql);
     }
 
-    public String RequestLogin(int userID, String password)
+    public static String RequestLogin(int userID, String password)
     {
-        //String a=WebConnector.post(Str.request+Str.login+"10005 23455");
         return WebConnector.post(Str.request+Str.login+String.valueOf(userID)+" "+password);
     }
+    //String a=WebConnector.post(Str.request+Str.login+"10005 23455");
 
-    @Override
-    public String RequestRegister(String type, String password, String name) {
-        //    String a=Str.request+Str.register+"CUSTOMER "+"23456 "+Base64handler.StringToBase64("爱慕拆腻子");
-        //    String b=WebConnector.post(a);
-        //    System.out.println(b);
+
+    public static String RequestRegister(String type,String password,String name)
+    {
         String fake_sql=Str.request+Str.register+type+password+" "+Base64handler.StringToBase64(name);
         return WebConnector.post(fake_sql);
     }

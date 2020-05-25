@@ -37,7 +37,7 @@
       </HBox>
       <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button fx:id="submitButton" mnemonicParsing="false" prefHeight="43.0" prefWidth="77.0" text="提交" />
+            <Button fx:id="submitButton" mnemonicParsing="false" prefHeight="43.0" prefWidth="77.0" text="提交" onAction="#onSubmitButtonClick" />
          </children>
       </HBox>
    </children>

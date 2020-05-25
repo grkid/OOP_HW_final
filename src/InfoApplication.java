@@ -1,12 +1,18 @@
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class InfoApplication extends MyApplication {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class InfoApplication extends MyApplication implements Initializable {
     @FXML
     private Label InfoLabel;
 
-    String info;
+    static String Myinfo="";
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -15,14 +21,24 @@ public class InfoApplication extends MyApplication {
         super.start(primaryStage);
     }
 
-    public void setInfo(String a)
+    public static void setInfo(String a)
     {
-        info=a;
+        Myinfo=a;
+    }
+
+    //直接展示一条提示信息
+    public static void showMessage(String a) throws Exception
+    {
+        InfoApplication ia=new InfoApplication();
+        InfoApplication.setInfo(a);
+        ia.showWindow();
     }
 
     @Override
-    protected void WindowInit() {
-        InfoLabel.setText(info);
-        super.WindowInit();
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        InfoLabel.setText(Myinfo);
+        //System.out.println("settext");
     }
+
+
 }

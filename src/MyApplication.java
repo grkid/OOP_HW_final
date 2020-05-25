@@ -2,12 +2,16 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
-public abstract class MyApplication extends Application {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public abstract class MyApplication extends Application implements Initializable {
     protected Stage stage=new Stage();
 
     protected String fxmlFileName="";
@@ -19,8 +23,7 @@ public abstract class MyApplication extends Application {
         System.out.println(fxmlFileName+" "+title);
         Parent root= FXMLLoader.load(getClass().getResource(fxmlFileName));
         primaryStage.setTitle(title);
-        primaryStage.setScene(new Scene(root,600,400));
-        WindowInit();
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
 
@@ -29,13 +32,8 @@ public abstract class MyApplication extends Application {
         start(stage);
     }
 
-    protected void WindowInit()
-    {
-        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-            @Override
-            public void handle(WindowEvent windowEvent) {
-                Platform.exit();
-            }
-        });
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
     }
 }

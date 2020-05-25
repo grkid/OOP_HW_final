@@ -7,35 +7,35 @@
 <?import javafx.scene.layout.*?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PeopleAlterInfoApplication">
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
             <Label text="名称：" />
-            <TextField />
+            <TextField fx:id="nameTextField"/>
          </children>
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
             <Label text="原密码：" />
-            <PasswordField />
+            <PasswordField fx:id="originPasswordField"/>
          </children>
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
             <Label text="新密码：" />
-            <PasswordField />
+            <PasswordField fx:id="newPasswordField"/>
          </children>
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
             <Label text="新密码确认：" />
-            <PasswordField />
+            <PasswordField fx:id="newPasswordConfirmField"/>
          </children>
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button mnemonicParsing="false" text="提交" />
+            <Button mnemonicParsing="false" text="提交" fx:id="submitButton" onAction="#onSubmitButtonClick"/>
          </children>
       </HBox>
    </children>

@@ -7,17 +7,17 @@
 <?import javafx.scene.layout.*?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SellerDeleteRecipeApplication">
    <children>
       <HBox prefHeight="200.0" prefWidth="200.0">
          <children>
             <Label text="菜品ID：" />
-            <TextField />
+            <TextField fx:id="idTextField"/>
          </children>
       </HBox>
       <HBox prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Button mnemonicParsing="false" text="确认" />
+            <Button mnemonicParsing="false" text="确认" fx:id="submitButton" onAction="#onSubmitButtonClick"/>
          </children>
       </HBox>
    </children>

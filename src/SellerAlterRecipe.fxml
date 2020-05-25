@@ -6,41 +6,41 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SellerAlterRecipeApplication">
     <children>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
             <Label text="菜品ID：" />
-            <TextField />
+            <TextField fx:id="idTextField"/>
          </children>
       </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0">
             <children>
                 <Label text="图片目录：" />
-                <TextField />
+                <TextField fx:id="picDirTextField"/>
             </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0">
             <children>
                 <Label text="名称：" />
-                <TextField />
+                <TextField fx:id="nameTextField" />
             </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0">
             <children>
                 <Label text="价格：" />
-                <TextField />
+                <TextField fx:id="priceTextField"/>
             </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0">
             <children>
                 <Label text="描述：" />
-                <TextArea prefHeight="100.0" prefWidth="270.0" />
+                <TextArea prefHeight="100.0" prefWidth="270.0" fx:id="descriptionTextArea"/>
             </children>
         </HBox>
         <HBox prefHeight="100.0" prefWidth="200.0">
             <children>
-                <Button mnemonicParsing="false" text="提交" />
+                <Button mnemonicParsing="false" text="提交" fx:id="submitButton" onAction="#onSubmitButtonClick"/>
             </children>
         </HBox>
     </children>

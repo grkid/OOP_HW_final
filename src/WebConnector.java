@@ -18,7 +18,7 @@ public class WebConnector {
     static String port;
     private static void readXml() throws Exception
     {
-        File f=new File("addr.xml");
+        File f=new File("./src/addr.xml");
         DocumentBuilderFactory factory=DocumentBuilderFactory.newInstance();
         DocumentBuilder builder=factory.newDocumentBuilder();
         Document doc=builder.parse(f);

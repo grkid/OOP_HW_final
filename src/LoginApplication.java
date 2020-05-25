@@ -39,6 +39,7 @@ public class LoginApplication extends Application {
         primaryStage.show();
     }
 
+
     public static void main(String[] args)
     {
         launch(args);
@@ -57,13 +58,42 @@ public class LoginApplication extends Application {
 
     public void onRegisterButtonClick(ActionEvent event) throws Exception
     {
-        RegisterApplication r=new RegisterApplication();
-        r.showWindow();
+        RegisterApplication a=new RegisterApplication();
+        a.showWindow();
     }
 
-    public void onLoginButtonClick(ActionEvent event) {
+    public void onLoginButtonClick(ActionEvent event) throws Exception
+    {
         String id=userIDTextField.getText();
-        System.out.println(id);
+        String password=userPasswordTextField.getText();
+        int id_int=Integer.parseInt(id);
+        String result=People.RequestLogin(id_int,password);
 
+        String[] results=result.split(" ");
+        if(results.length==5 && results[1].equals(Str.success.strip()))
+        {
+            String type=results[2];
+            String name=results[3];
+            double money=Double.parseDouble(results[4]);
+            People.createInstance(name,id_int,password,type,money);
+
+            stage.close();
+            stage.hide();
+            if(type.equals(Str.seller.strip()))
+            {
+                SellerWindowApplication a=new SellerWindowApplication();
+                a.showWindow();
+            }
+            else
+            {
+                CustomerWindowApplication a=new CustomerWindowApplication();
+                a.showWindow();
+            }
+        }
+        else
+        {
+            InfoApplication.showMessage("登录失败，请检查用户名和密码。");
+            userPasswordTextField.clear();
+        }
     }
 }

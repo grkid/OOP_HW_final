@@ -8,12 +8,12 @@
 <?import javafx.scene.layout.*?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PeopleAddMoneyApplication">
    <children>
       <HBox prefHeight="100.0" prefWidth="600.0">
          <children>
             <Label text="存储金额：" />
-            <TextField />
+            <TextField fx:id="moneyTextField"/>
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0">
@@ -27,7 +27,7 @@
       </HBox>
       <HBox prefHeight="100.0" prefWidth="600.0">
          <children>
-            <Button mnemonicParsing="false" text="确认" />
+            <Button mnemonicParsing="false" text="确认" fx:id="submitButton" onAction="#onSubmitButtonClick"/>
          </children>
       </HBox>
    </children>

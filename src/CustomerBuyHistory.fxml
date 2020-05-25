@@ -7,12 +7,12 @@
 <?import javafx.scene.layout.*?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" fx:controller="CustomerBuyHistoryApplication" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ListView prefHeight="300.0" prefWidth="600.0" />
+      <TableView prefHeight="300.0" prefWidth="600.0" fx:id="list" />
       <HBox prefHeight="100.0" prefWidth="600.0">
          <children>
-            <Label text="总花费：" />
+            <Label text="总花费：" fx:id="totalCost"/>
          </children>
       </HBox>
    </children>

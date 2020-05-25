@@ -15,11 +15,7 @@ public interface RequestPeople {
 
     String RequestWithdrawMoney(int userID, double moneyVal);
 
-    String RequestLogin(int userID, String password);
-    //String a=WebConnector.post(Str.request+Str.login+"10005 23455");
 
-
-    String RequestRegister(String type,String password,String name);
     //    String a=Str.request+Str.register+"CUSTOMER "+"23456 "+Base64handler.StringToBase64("爱慕拆腻子");
     //    String b=WebConnector.post(a);
     //    System.out.println(b);
