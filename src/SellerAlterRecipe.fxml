@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="菜品ID：" />
+            <TextField />
+         </children>
+      </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <Label text="图片目录：" />
+                <TextField />
+            </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <Label text="名称：" />
+                <TextField />
+            </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <Label text="价格：" />
+                <TextField />
+            </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <Label text="描述：" />
+                <TextArea prefHeight="100.0" prefWidth="270.0" />
+            </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <Button mnemonicParsing="false" text="提交" />
+            </children>
+        </HBox>
+    </children>
+</VBox>

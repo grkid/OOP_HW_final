@@ -5,10 +5,11 @@ public interface RequestPeople {
     //REQUEST LOGIN id pd
     //REQUEST REGISTER type pd Name 返回用户ID tested
     //REQUEST ALTERPASSWORD id origin_password new_password 更改密码
-    //REQUEST GET ALLRECIPE 返回所有商品的所有信息
+    //REQUEST GET ALL RECIPE 返回所有商品的所有信息
     //REQUEST GET  MONEY UserID  返回钱数
     //REQUEST GET INFO id 返回所有有关我的订单信息
     //REQUEST ALTERNAME id name 修改名字
+    //REQTEST GETPIC <name> 返回图片的base64
 
     String RequestAddMoney(int userID, double moneyVal);
 
@@ -30,4 +31,6 @@ public interface RequestPeople {
     String RequestAlterPassword(int id,String old_password,String new_password);
 
     String RequestAlterName(int id,String newName);
+
+    String RequestGetPic(String name);
 }

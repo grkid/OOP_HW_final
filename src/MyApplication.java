@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
-public class MyApplication extends Application {
+public abstract class MyApplication extends Application {
     protected Stage stage=new Stage();
 
     protected String fxmlFileName="";

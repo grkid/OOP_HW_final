@@ -32,6 +32,7 @@ public class Str {
     public static String alterPassword="ALTERPASSWORD ";
     public static String recipeInfo="RECIPEINFO ";
     public static String info="INFO ";
+    public static String getPic="GETPIC ";
 
     //商家事务集合
     //REQUEST ADDRECIPE UserID Recipe_name PicDir Price Description

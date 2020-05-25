@@ -1,6 +1,46 @@
 import java.util.HashMap;
 
 public class People implements RequestPeople {
+    //单例模式
+    protected String name;
+    protected int id;
+    protected String type;
+    protected String password;
+    protected double money;
+
+    private People(){};
+
+    private static People instance=null;
+
+    public static synchronized People getInstance()
+    {
+        if(instance==null) {
+            System.out.println("ERROR:People中未创建对象。");
+            return null;
+        }
+        return instance;
+    }
+
+    public static void createInstance(String name, int id, String password, String type, double money)
+    {
+        synchronized (People.class)
+        {
+            if(instance!=null)
+            {
+                System.out.println("ERROR:People中重复创建对象。");
+            }
+
+            //TODO
+            instance=PeopleFactory.create(type);
+
+            assert instance != null;
+            instance.id=id;
+            instance.money=money;
+            instance.name=name;
+            instance.password=password;
+            instance.type=type;
+        }
+    }
 
     @Override
     public String RequestAddMoney(int userID, double moneyVal) {
@@ -55,6 +95,13 @@ public class People implements RequestPeople {
     public String RequestAlterName(int id,String name)
     {
         String fake_sql=Str.request+Str.alterName+String.valueOf(id)+" "+Base64handler.StringToBase64(name);
+        return WebConnector.post(fake_sql);
+    }
+
+    @Override
+    public String RequestGetPic(String name) {
+        //REQUEST GETPIC <name.jpg>
+        String fake_sql=Str.request+Str.getPic+name;
         return WebConnector.post(fake_sql);
     }
 }
