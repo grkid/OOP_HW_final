@@ -52,6 +52,6 @@ public class Base64handler {
 
     public static String Base64ToString(String base)
     {
-        return Arrays.toString(Base64.getDecoder().decode(base));
+        return new String(Base64.getDecoder().decode(base));
     }
 }

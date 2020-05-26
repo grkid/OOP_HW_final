@@ -5,28 +5,29 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CustomerWindowApplication">
     <children>
         <HBox prefHeight="140.0" prefWidth="1280.0">
          <children>
-            <Button mnemonicParsing="false" text="购买商品" fx:id="buyButton" onAction="#onBuyButtonClick"/>
-            <Button mnemonicParsing="false" text="刷新目录" fx:id="refreshRecipeButton" onAction="#onRefreshRecipeButtonClick"/>
-            <Button mnemonicParsing="false" text="购买历史" fx:id="historyButton" onAction="#onHistoryButtonClick"/>
-            <Button mnemonicParsing="false" text="信息更改" fx:id="infoAlterButton" onAction="#onInfoAlterButtonClick"/>
-            <Button mnemonicParsing="false" text="提取余额" fx:id="withdrawMoneyButton" onAction="#onWithdrawMoneyButtonClick"/>
-            <Button mnemonicParsing="false" text="存入余额" fx:id="addMoneyButton" onAction="#onAddMoneyButtonClick"/>
+            <Button fx:id="buyButton" mnemonicParsing="false" onAction="#onBuyButtonClick" text="购买商品" />
+            <Button fx:id="refreshRecipeButton" mnemonicParsing="false" onAction="#onRefreshRecipeButtonClick" text="刷新目录" />
+            <Button fx:id="historyButton" mnemonicParsing="false" onAction="#onHistoryButtonClick" text="购买历史" />
+            <Button fx:id="infoAlterButton" mnemonicParsing="false" onAction="#onInfoAlterButtonClick" text="信息更改" />
+            <Button fx:id="withdrawMoneyButton" mnemonicParsing="false" onAction="#onWithdrawMoneyButtonClick" text="提取余额" />
+            <Button fx:id="addMoneyButton" mnemonicParsing="false" onAction="#onAddMoneyButtonClick" text="存入余额" />
          </children></HBox>
         <HBox prefHeight="580.0" prefWidth="1280.0">
             <children>
-                <TableView prefHeight="580.0" prefWidth="1050.0" fx:id="list"/>
+                <TableView fx:id="list" prefHeight="580.0" prefWidth="1050.0" />
                 <VBox prefHeight="200.0" prefWidth="230.0">
                <children>
                   <Label text="个人信息" />
-                  <Label text="账号：" fx:id="IDLabel"/>
-                  <Label text="名称：" fx:id="nameLabel"/>
-                  <Label text="余额：" fx:id="moneyLabel"/>
-                  <Button mnemonicParsing="false" text="刷新" fx:id="refreshInfoButton" onAction="#onRefreshInfoButtonClick"/>
+                  <Label fx:id="IDLabel" text="账号：" />
+                  <Label fx:id="nameLabel" text="名称：" />
+                  <Label fx:id="moneyLabel" text="余额：" />
+                  <Button fx:id="refreshInfoButton" mnemonicParsing="false" onAction="#onRefreshInfoButtonClick" text="刷新" />
                </children></VBox>
             </children>
         </HBox>

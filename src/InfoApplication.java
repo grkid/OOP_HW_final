@@ -27,11 +27,18 @@ public class InfoApplication extends MyApplication implements Initializable {
     }
 
     //直接展示一条提示信息
-    public static void showMessage(String a) throws Exception
+    public static void showMessage(String a)
     {
-        InfoApplication ia=new InfoApplication();
-        InfoApplication.setInfo(a);
-        ia.showWindow();
+        try {
+            InfoApplication ia = new InfoApplication();
+            InfoApplication.setInfo(a);
+            ia.showWindow();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
     }
 
     @Override

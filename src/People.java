@@ -21,6 +21,26 @@ public class People implements RequestPeople {
         return instance;
     }
 
+    public double getMoney() {
+        return money;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getType() {
+        return type;
+    }
+
     public static void createInstance(String name, int id, String password, String type, double money)
     {
         synchronized (People.class)
@@ -71,8 +91,10 @@ public class People implements RequestPeople {
 
     @Override
     public String GetAllRecipe() {
+        //REQUEST GET ALLRECIPE
         //这个涉及大量内容
-        return null;
+        String fake_sql=Str.request+Str.get+Str.allRecipe;
+       return WebConnector.post(fake_sql);
     }
 
     @Override
