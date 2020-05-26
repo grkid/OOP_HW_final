@@ -38,7 +38,6 @@ public class InfoApplication extends MyApplication implements Initializable {
         {
             e.printStackTrace();
         }
-
     }
 
     @Override
