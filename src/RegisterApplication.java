@@ -54,6 +54,7 @@ public class RegisterApplication extends MyApplication {
         if(results.length==3 && results[1].equals(Str.success.strip()))
         {
             InfoApplication.showMessage("注册成功，您的ID为："+results[2]+"。请牢记。");
+            closeWindow(event);
         }
         else
         {

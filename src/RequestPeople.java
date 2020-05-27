@@ -29,4 +29,6 @@ public interface RequestPeople {
     String RequestAlterName(int id,String newName);
 
     String RequestGetPic(String name);
+
+    String RequestGetInfo(int id);
 }

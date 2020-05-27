@@ -8,7 +8,7 @@ public interface RequestSeller extends RequestPeople {
 
     String RequestAddRecipe(int userID,String RecipeName,String picDir,double price,String description);
 
-    String RequestDeleteRecipe(int recipeID);
+    String RequestDeleteRecipe(int recipeID,int userID);
 
     String RequestAlterRecipe(int recipeID,int UserId,String RecipeName,String picDir,double price,String description);
 

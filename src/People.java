@@ -43,6 +43,27 @@ public class People implements RequestPeople {
         return this.type;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setMoney(double money) {
+        this.money = money;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    //此处不应该被调用
+    private void setType(String type) {
+        this.type = type;
+    }
+
     public static void createInstance(String name, int id, String password, String type, double money) {
         synchronized(People.class) {
             if (instance != null) {
@@ -106,6 +127,12 @@ public class People implements RequestPeople {
 
     public String RequestGetPic(String name) {
         String fake_sql = Str.request + Str.getPic + name;
+        return WebConnector.post(fake_sql);
+    }
+
+    @Override
+    public String RequestGetInfo(int id) {
+        String fake_sql=Str.request+Str.get+Str.info+id;
         return WebConnector.post(fake_sql);
     }
 }

@@ -1,8 +1,10 @@
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -17,6 +19,11 @@ public abstract class MyApplication extends Application implements Initializable
     protected String fxmlFileName="";
 
     protected String title="";
+
+    protected void closeWindow(ActionEvent event)
+    {
+        ((Node)(event.getSource())).getScene().getWindow().hide();
+    }
 
     @Override
     public void start(Stage primaryStage) throws Exception {

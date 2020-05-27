@@ -12,9 +12,9 @@ public class Seller extends People implements RequestSeller {
     }
 
     @Override
-    public String RequestDeleteRecipe(int recipeID) {
-        //REQUEST DELETERECIPE recipeID
-        String fake_sql=Str.request+Str.deleteRecipe+recipeID;
+    public String RequestDeleteRecipe(int recipeID,int userID) {
+        //REQUEST DELETERECIPE recipeID userID
+        String fake_sql=Str.request+Str.deleteRecipe+recipeID+" "+userID;
         return WebConnector.post(fake_sql);
     }
 

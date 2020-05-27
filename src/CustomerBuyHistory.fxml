@@ -6,13 +6,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" fx:controller="CustomerBuyHistoryApplication" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CustomerBuyHistoryApplication">
    <children>
-      <TableView prefHeight="300.0" prefWidth="600.0" fx:id="list" />
-      <HBox prefHeight="100.0" prefWidth="600.0">
+      <TableView fx:id="list" prefHeight="300.0" prefWidth="500.0" />
+      <HBox prefHeight="100.0" prefWidth="500.0">
          <children>
-            <Label text="总花费：" fx:id="totalCost"/>
+            <Label fx:id="totalCost" text="总花费：" />
          </children>
       </HBox>
    </children>
