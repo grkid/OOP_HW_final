@@ -56,6 +56,7 @@ public class LoginApplication extends Application {
             }
         });
 
+        ImgHandler.ImgInit();
     }
 
     public void onRegisterButtonClick(ActionEvent event) throws Exception
@@ -86,7 +87,13 @@ public class LoginApplication extends Application {
                 SellerWindowApplication a=new SellerWindowApplication();
                 a.showWindow();
             }
-            else
+            else if(type.equals(Str.admin.strip()))
+            {
+                //TODO: 管理员
+                ManagerApplication a=new ManagerApplication();
+                a.showWindow();
+            }
+            else//除了商家 其他全部是客户
             {
                 CustomerWindowApplication a=new CustomerWindowApplication();
                 a.showWindow();

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManagerApplication">
+    <children>
+        <TableView fx:id="list" prefHeight="300.0" prefWidth="500.0" />
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="500.0">
+            <children>
+                <Label fx:id="totalCost" prefHeight="72.0" prefWidth="321.0" text="总花费：">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            </children>
+        </HBox>
+    </children>
+</VBox>

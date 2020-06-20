@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -8,39 +9,57 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SellerAlterRecipeApplication">
     <children>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label text="菜品ID：" />
-            <TextField fx:id="idTextField"/>
+            <Label text="菜品ID：">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <TextField fx:id="idTextField" prefHeight="30.0" prefWidth="218.0" />
          </children>
       </HBox>
-        <HBox prefHeight="100.0" prefWidth="200.0">
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
             <children>
-                <Label text="图片目录：" />
-                <TextField fx:id="picDirTextField"/>
+                <Label text="图片目录：">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+                <TextField fx:id="picDirTextField" />
             </children>
         </HBox>
-        <HBox prefHeight="100.0" prefWidth="200.0">
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
             <children>
-                <Label text="名称：" />
-                <TextField fx:id="nameTextField" />
+                <Label text="名称：">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+                <TextField fx:id="nameTextField" prefHeight="30.0" prefWidth="232.0" />
             </children>
         </HBox>
-        <HBox prefHeight="100.0" prefWidth="200.0">
+        <HBox alignment="CENTER" prefHeight="127.0" prefWidth="600.0">
             <children>
-                <Label text="价格：" />
-                <TextField fx:id="priceTextField"/>
+                <Label text="价格：">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+                <TextField fx:id="priceTextField" prefHeight="30.0" prefWidth="228.0" />
             </children>
         </HBox>
-        <HBox prefHeight="100.0" prefWidth="200.0">
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
             <children>
-                <Label text="描述：" />
-                <TextArea prefHeight="100.0" prefWidth="270.0" fx:id="descriptionTextArea"/>
+                <Label text="描述：">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+                <TextArea fx:id="descriptionTextArea" prefHeight="100.0" prefWidth="234.0" />
             </children>
         </HBox>
-        <HBox prefHeight="100.0" prefWidth="200.0">
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
             <children>
-                <Button mnemonicParsing="false" text="提交" fx:id="submitButton" onAction="#onSubmitButtonClick"/>
+                <Button fx:id="submitButton" mnemonicParsing="false" onAction="#onSubmitButtonClick" prefHeight="64.0" prefWidth="119.0" text="提交">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
             </children>
         </HBox>
     </children>

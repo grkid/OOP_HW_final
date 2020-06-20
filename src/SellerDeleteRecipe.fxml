@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SellerDeleteRecipeApplication">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="285.0" prefWidth="365.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SellerDeleteRecipeApplication">
    <children>
-      <HBox prefHeight="200.0" prefWidth="200.0">
+      <HBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Label text="菜品ID：" />
-            <TextField fx:id="idTextField"/>
+            <Label text="菜品ID：">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <TextField fx:id="idTextField" />
          </children>
       </HBox>
-      <HBox prefHeight="200.0" prefWidth="200.0">
+      <HBox alignment="CENTER" prefHeight="200.0" prefWidth="600.0">
          <children>
-            <Button mnemonicParsing="false" text="确认" fx:id="submitButton" onAction="#onSubmitButtonClick"/>
+            <Button fx:id="submitButton" mnemonicParsing="false" onAction="#onSubmitButtonClick" prefHeight="61.0" prefWidth="98.0" text="确认">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
          </children>
       </HBox>
    </children>

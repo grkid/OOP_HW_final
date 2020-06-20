@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
@@ -9,13 +10,19 @@
    <children>
       <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label text="名称：" />
+            <Label text="名称：">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
             <TextField fx:id="nameTextField" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label text="类型：" />
+            <Label text="类型：">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
             <ChoiceBox fx:id="type" prefHeight="30.0" prefWidth="200.0">
                <effect>
                   <Glow />
@@ -25,19 +32,28 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label text="密码：" />
+            <Label text="密码：">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
             <PasswordField fx:id="passwordField" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label text="确认密码：" />
+            <Label text="确认密码：">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
             <PasswordField fx:id="confirmPasswordField" prefHeight="30.0" prefWidth="172.0" />
          </children>
       </HBox>
       <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button fx:id="submitButton" mnemonicParsing="false" prefHeight="43.0" prefWidth="77.0" text="提交" onAction="#onSubmitButtonClick" />
+            <Button fx:id="submitButton" mnemonicParsing="false" onAction="#onSubmitButtonClick" prefHeight="43.0" prefWidth="77.0" text="提交">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
          </children>
       </HBox>
    </children>

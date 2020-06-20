@@ -13,6 +13,11 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class CustomerWindowApplication extends MyApplication {
+
+    @FXML
+    private Button bucketButton;
+    @FXML
+    private Button showPicButton;
     @FXML
     private TableView list;
     @FXML
@@ -86,23 +91,30 @@ public class CustomerWindowApplication extends MyApplication {
         IDLabel.setText("账号："+People.getInstance().getId());
         nameLabel.setText("名称："+People.getInstance().getName());
         moneyLabel.setText("余额："+People.getInstance().getMoney());
+
+        CustomerReadyToBuy.setData(data);
     }
 
-    public void onBuyButtonClick(ActionEvent event) {
+    public void onBuyButtonClick(ActionEvent event)
+        throws Exception
+    {
         TableRecipe selectRecipe=(TableRecipe) list.getSelectionModel().getSelectedItem();
 
         if(selectRecipe==null)
             InfoApplication.showMessage("未选择所需的菜品。");
 
-        String result=((Customer)(People.getInstance())).requestBuy(People.getInstance().getId(),Integer.parseInt(selectRecipe.getId()),1,Double.parseDouble(selectRecipe.getPrice()));
 
-        String[] results=result.split(" ");
-        if(results.length==2 && results[1].equals(Str.success.strip())) {
-            InfoApplication.showMessage("购买成功。");
-            onRefreshInfoButtonClick(event);
-        }
-        else
-            InfoApplication.showMessage("购买失败，请检查您的余额。如余额足够购买，请检查网络连接。");
+        CustomerReadyToBuy.setIdReadyToBuy(selectRecipe.getId());
+        CustomerBuyApplication a=new CustomerBuyApplication();
+        a.showWindow();
+//        String[] results=result.split(" ");
+//        if(results.length==2 && results[1].equals(Str.success.strip())) {
+//            InfoApplication.showMessage("购买成功。");
+//            onRefreshInfoButtonClick(event);
+//        }
+//        else
+//            InfoApplication.showMessage("购买失败，请检查您的余额。如余额足够购买，请检查网络连接。");
+
     }
 
     public void onRefreshRecipeButtonClick(ActionEvent event) {
@@ -153,5 +165,34 @@ public class CustomerWindowApplication extends MyApplication {
         nameLabel.setText("名称："+People.getInstance().getName());
         moneyLabel.setText("余额："+People.getInstance().getMoney());
 
+    }
+
+    public void onShowPicButtonClick(ActionEvent event) {
+        TableRecipe r=(TableRecipe)list.getSelectionModel().getSelectedItem();
+        if(r==null)
+        {
+            InfoApplication.showMessage("请选择需要显示图片的商品。");
+            return;
+        }
+        String name=r.getUserID()+"_"+r.getId()+".jpg";
+        String result=People.getInstance().RequestGetPic(name);
+        String[] results=result.split(" ");
+        if(results.length==3 && results[1].equals(Str.success.strip()))
+        {
+            Base64handler.base64ToImage(results[2],ImgHandler.basePath+name);
+            ShowPicApplication.showPic(ImgHandler.basePath+name);
+        }
+        else
+        {
+            InfoApplication.showMessage("加载图片失败，请检查网络连接。");
+        }
+
+    }
+
+    public void onBucketButtonClick(ActionEvent event)
+            throws Exception
+    {
+        CustomerBucket c=new CustomerBucket();
+        c.showWindow();
     }
 }

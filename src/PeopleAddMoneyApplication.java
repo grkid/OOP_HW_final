@@ -6,6 +6,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -25,9 +26,21 @@ public class PeopleAddMoneyApplication extends MyApplication {
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL url, ResourceBundle resourceBundle)
+    {
         //todo 图片加载失败
-        //img.setImage(new Image("/pic_resource/Alipay.jpg"));
+        //img.setImage(new Image("./pic_resource/Alipay.jpg"));
+        try {
+            File f = new File("./pic_resource/Alipay.jpg");
+            String localUrl = f.toURI().toURL().toString();
+            Image i=new Image(localUrl,false);
+            img.setImage(i);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
     }
 
     public void onSubmitButtonClick(ActionEvent event) {

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -7,27 +8,68 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CustomerWindowApplication">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CustomerWindowApplication">
     <children>
-        <HBox prefHeight="140.0" prefWidth="1280.0">
+        <HBox alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="1280.0">
          <children>
-            <Button fx:id="buyButton" mnemonicParsing="false" onAction="#onBuyButtonClick" text="购买商品" />
-            <Button fx:id="refreshRecipeButton" mnemonicParsing="false" onAction="#onRefreshRecipeButtonClick" text="刷新目录" />
-            <Button fx:id="historyButton" mnemonicParsing="false" onAction="#onHistoryButtonClick" text="购买历史" />
-            <Button fx:id="infoAlterButton" mnemonicParsing="false" onAction="#onInfoAlterButtonClick" text="信息更改" />
-            <Button fx:id="withdrawMoneyButton" mnemonicParsing="false" onAction="#onWithdrawMoneyButtonClick" text="提取余额" />
-            <Button fx:id="addMoneyButton" mnemonicParsing="false" onAction="#onAddMoneyButtonClick" text="存入余额" />
+            <Button fx:id="buyButton" mnemonicParsing="false" onAction="#onBuyButtonClick" text="购买商品">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="refreshRecipeButton" mnemonicParsing="false" onAction="#onRefreshRecipeButtonClick" text="刷新目录">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="historyButton" mnemonicParsing="false" onAction="#onHistoryButtonClick" text="购买历史">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="infoAlterButton" mnemonicParsing="false" onAction="#onInfoAlterButtonClick" text="信息更改">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="withdrawMoneyButton" mnemonicParsing="false" onAction="#onWithdrawMoneyButtonClick" text="提取余额">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="addMoneyButton" mnemonicParsing="false" onAction="#onAddMoneyButtonClick" text="存入余额">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="showPicButton" mnemonicParsing="false" onAction="#onShowPicButtonClick" text="显示图片">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="bucketButton" mnemonicParsing="false" onAction="#onBucketButtonClick" text="购物车">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
          </children></HBox>
         <HBox prefHeight="580.0" prefWidth="1280.0">
             <children>
                 <TableView fx:id="list" prefHeight="580.0" prefWidth="1050.0" />
-                <VBox prefHeight="200.0" prefWidth="230.0">
+                <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="230.0">
                <children>
-                  <Label text="个人信息" />
-                  <Label fx:id="IDLabel" text="账号：" />
-                  <Label fx:id="nameLabel" text="名称：" />
-                  <Label fx:id="moneyLabel" text="余额：" />
-                  <Button fx:id="refreshInfoButton" mnemonicParsing="false" onAction="#onRefreshInfoButtonClick" text="刷新" />
+                  <Label prefHeight="60.0" prefWidth="232.0" text="个人信息">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="IDLabel" prefHeight="60.0" prefWidth="230.0" text="账号：">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="nameLabel" prefHeight="60.0" prefWidth="230.0" text="名称：">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Label fx:id="moneyLabel" prefHeight="60.0" prefWidth="230.0" text="余额：">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <Button fx:id="refreshInfoButton" mnemonicParsing="false" onAction="#onRefreshInfoButtonClick" prefHeight="73.0" prefWidth="230.0" text="刷新">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
                </children></VBox>
             </children>
         </HBox>

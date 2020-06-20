@@ -2,17 +2,21 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.ResourceBundle;
 
+public class ManagerApplication extends MyApplication {
 
-public class CustomerBuyHistoryApplication extends MyApplication {
+    //由于框架的原因，不能继承CustomerBuyHistoryApplication。FXML文件只绑定了一个类。
+
     @FXML
     private TableView list;
     @FXML
@@ -28,8 +32,8 @@ public class CustomerBuyHistoryApplication extends MyApplication {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        fxmlFileName="CustomerBuyHistory.fxml";
-        title="购买";
+        fxmlFileName="ManagerApplication.fxml";
+        title="销售记录";
         super.start(primaryStage);
     }
 
@@ -72,15 +76,35 @@ public class CustomerBuyHistoryApplication extends MyApplication {
         showData();
     }
 
-    protected void showData()
-    {
+    protected void showData() {
+        SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Calendar c=Calendar.getInstance();
+        Date currentDate=new Date(System.currentTimeMillis());
+        Date oneWeekAgo;
+        Date oneMonthAgo;
+        c.setTime(currentDate);
+        c.add(Calendar.DATE,-7);
+        oneWeekAgo=(Date)c.getTime().clone();
+        c.add(Calendar.DATE,-23);
+        oneMonthAgo=(Date)c.getTime().clone();
+        System.out.println(oneWeekAgo);
+        System.out.println(oneMonthAgo);
         double sum=0;
+        double weekSum=0;
+        double monthSum=0;
         int s=data.size();
-        for(int i=0;i<s;i++)
-        {
-            TableRecord r=data.get(i);
-            sum+=Double.parseDouble(r.getActualPrice());
+        for (TableRecord r : data) {
+            try {
+                Date date = format.parse(r.getTime());
+                if (date.compareTo(oneWeekAgo) > 0)
+                    weekSum += Double.parseDouble(r.getActualPrice());
+                else if (date.compareTo(oneMonthAgo) > 0)
+                    monthSum += Double.parseDouble(r.getActualPrice());
+            } catch (Exception e) {
+                System.out.println("ERROR ManagerApplication：时间格式不正确。");
+            }
+            sum += Double.parseDouble(r.getActualPrice());
         }
-        totalCost.setText("总支出："+sum);
+        totalCost.setText("总销售额："+sum+",周销售额："+weekSum+",月销售额："+monthSum);
     }
 }

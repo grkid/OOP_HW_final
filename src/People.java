@@ -132,6 +132,7 @@ public class People implements RequestPeople {
 
     @Override
     public String RequestGetInfo(int id) {
+        //管理员走这条路径
         String fake_sql=Str.request+Str.get+Str.info+id;
         return WebConnector.post(fake_sql);
     }

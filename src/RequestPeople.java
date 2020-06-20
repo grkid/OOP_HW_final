@@ -9,7 +9,7 @@ public interface RequestPeople {
     //REQUEST GET  MONEY UserID  返回钱数
     //REQUEST GET INFO id 返回所有有关我的订单信息
     //REQUEST ALTERNAME id name 修改名字
-    //REQTEST GETPIC <name> 返回图片的base64
+    //REQUEST GETPIC <name> 返回图片的base64
 
     String RequestAddMoney(int userID, double moneyVal);
 

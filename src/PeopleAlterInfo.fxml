@@ -1,41 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PeopleAlterInfoApplication">
    <children>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label text="名称：" />
-            <TextField fx:id="nameTextField"/>
+            <Label text="名称：">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <TextField fx:id="nameTextField" />
          </children>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label text="原密码：" />
-            <PasswordField fx:id="originPasswordField"/>
+            <Label text="原密码：">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <PasswordField fx:id="originPasswordField" prefHeight="30.0" prefWidth="184.0" />
          </children>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label text="新密码：" />
-            <PasswordField fx:id="newPasswordField"/>
+            <Label text="新密码：">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <PasswordField fx:id="newPasswordField" prefHeight="30.0" prefWidth="185.0" />
          </children>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label text="新密码确认：" />
-            <PasswordField fx:id="newPasswordConfirmField"/>
+            <Label text="新密码确认：">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <PasswordField fx:id="newPasswordConfirmField" prefHeight="30.0" prefWidth="146.0" />
          </children>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button mnemonicParsing="false" text="提交" fx:id="submitButton" onAction="#onSubmitButtonClick"/>
+            <Button fx:id="submitButton" mnemonicParsing="false" onAction="#onSubmitButtonClick" prefHeight="57.0" prefWidth="93.0" text="提交">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
          </children>
       </HBox>
    </children>

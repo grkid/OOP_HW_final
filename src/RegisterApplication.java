@@ -35,8 +35,14 @@ public class RegisterApplication extends MyApplication {
         String t=type.getValue();
         if(t.equals("用户"))
             t=Str.customer;
-        else
+        else if(t.equals("商家"))
             t=Str.seller;
+        else if(t.equals("一类会员用户（一元优惠）"))
+            t=Str.customerDiscount1;
+        else if(t.equals("二类会员用户（九五折优惠）"))
+            t=Str.customerDiscount2;
+        else//管理员
+            t=Str.admin;
 
         String name=nameTextField.getText();
         String password1=passwordField.getText();
@@ -64,6 +70,6 @@ public class RegisterApplication extends MyApplication {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        type.setItems(FXCollections.observableArrayList("用户","商家"));
+        type.setItems(FXCollections.observableArrayList("用户","一类会员用户（一元优惠）","二类会员用户（九五折优惠）","商家","管理员"));
     }
 }

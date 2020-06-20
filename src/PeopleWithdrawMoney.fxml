@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PeopleWithdrawMoneyApplication">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="276.0" prefWidth="431.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PeopleWithdrawMoneyApplication">
    <children>
-      <HBox prefHeight="200.0" prefWidth="600.0">
+      <HBox alignment="CENTER" prefHeight="200.0" prefWidth="600.0">
          <children>
-            <Label text="取出金额：" />
-            <TextField fx:id="withdrawMoneyTextField"/>
+            <Label text="取出金额：">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <TextField fx:id="withdrawMoneyTextField" />
          </children>
       </HBox>
-      <HBox prefHeight="200.0" prefWidth="600.0">
+      <HBox alignment="CENTER" prefHeight="177.0" prefWidth="600.0">
          <children>
-            <Button mnemonicParsing="false" text="确认" fx:id="submitButton" onAction="#onSubmitButtonClick"/>
+            <Button fx:id="submitButton" mnemonicParsing="false" onAction="#onSubmitButtonClick" prefHeight="66.0" prefWidth="108.0" text="确认">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
          </children>
       </HBox>
    </children>

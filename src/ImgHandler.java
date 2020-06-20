@@ -3,9 +3,11 @@ import java.util.Random;
 
 public class ImgHandler {
 
+    static String basePath="./pic/";
+
     public static void ImgInit()
     {
-        File f=new File("./pic");
+        File f=new File(basePath);
         if(!f.exists())
             f.mkdir();
     }

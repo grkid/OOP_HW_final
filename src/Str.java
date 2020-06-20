@@ -56,9 +56,12 @@ public class Str {
     //管理员事务集合
     //REQUEST COUNT ...
     //TODO
+    public static String admin="ADMIN ";
 
     public static String count="COUNT ";
 
     public static String customer="CUSTOMER ";
     public static String seller="SELLER ";
+    public static String customerDiscount1="CUSTOMER_DISCOUNT1 ";//每一单都可以减免一元
+    public static String customerDiscount2="CUSTOMER_DISCOUNT2 ";//每一单都可以打九五折
 }
